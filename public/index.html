@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/css/style.css">
+</head>
+<body>
+    <main>
+        <section class="divs">
+            <img src="https://res.cloudinary.com/dvdhtdzwp/image/upload/v1729639110/ier.png" alt="Logo de la institución">
+        </section>
+        <section class="divs">
+            <div class="div_2">
+                <h1>Votaciones 2025</h1>
+            </div>
+            <div class="div_2">
+                <div class="one">
+                    <input type="text" id="user" placeholder="Usuario" class="inputs">
+                    <input type="password" id="psswd" placeholder="Pin" class="inputs">
+                </div>
+                <div class="two">
+                    <button class="botoncito" id="botoncito">Send</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        async function login(id, pin) {
+    const url = 'http://localhost:3000/api/user/login';
+    const data = { id, pin };
+
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.message || "Error de autenticación");
+        }
+
+        const result = await response.json();
+        localStorage.setItem('auth', result.token);
+    } catch (err) {
+        alert(err.message || "User or password not matched");
+    }
+}
+
+    const user = document.getElementById('user')
+    const psswd = document.getElementById('psswd')
+    const boton = document.getElementById('botoncito')
+    boton.addEventListener('click', () => {   
+        const id = Number(user.value)
+        const password = Number(psswd.value)     
+        login(id, password)
+    })
+
+    //login(1062430256, 10297);
+
+    </script>
+    <!-- <script src="./src/js/auth.js"></script> -->
+</body>
+</html>

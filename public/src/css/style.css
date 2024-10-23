@@ -1,0 +1,53 @@
+body {
+    background-color:#e6f7df ;
+    font-family: monospace;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+}
+
+.divs {
+    width: 50%;
+    position: relative;
+}
+
+.divs:first-of-type img {
+    width: 80%;
+    height: 80vh;
+    position: absolute;
+    left: 10%;
+    top: 10vh;
+}
+
+.inputs{
+    height: 25px;
+    width: 300px;
+    border-radius: 15px;
+}
+
+.div_2{
+    position: relative;
+    top: 400px;
+}
+
+
+.one {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.one input {
+    max-width: 90%;
+}
+
+.two {
+    width: 100%;
+}
+
+.two button {
+    margin-left: 300px;
+    margin-top: 50px;
+}
