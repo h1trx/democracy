@@ -45,8 +45,8 @@ export class Persona {
         return new Promise ((resolve, reject) => {
             if (datos.pin == data.pin) {
                 const token = jwt.sign({ 
-                    "id": datos[0].id,
-                    "name": datos[0].name
+                    "id": datos.id,
+                    "name": datos.name
                 }, SECRET_KEY, { expiresIn: '1h' });
                 return resolve({token})
             } else {

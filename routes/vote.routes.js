@@ -14,15 +14,13 @@ router.post('/all',
         })
     })
 
-router.post('/personero',
-    verifyToken(),
-    (req, res) => {
-        const { voto } = req.body   
-        const votar = new Vote()
-        votar.personero(voto).then(resolve => {
-            res.json(resolve)
-        })
+router.post('/personero',(req, res) => {
+    const { voto } = req.body   
+    const votar = new Vote()
+    votar.personero(voto).then(resolve => {
+        res.json(resolve)
     })
+})
 
     router.post('/contralor',
         verifyToken(),

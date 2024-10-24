@@ -1,0 +1,23 @@
+*{
+    background-color: e6f7df;
+    font-family: monospace;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+}
+
+.hs_{
+    display: flex;
+   /* position: center; */
+    top: 200px;
+}
+.s_Div{
+    display: flex;
+}
+.b_uttons{
+    display: flexbox;
+    position: relative;
+    top: 150px;
+}

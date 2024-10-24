@@ -21,6 +21,8 @@ router.post('/login', (req, res) => {
     const persona = new Persona();
     persona.login(data).then((resolve) => {
         res.json(resolve);
+    }).catch(err => {
+        res.json(err)
     })
 })
 

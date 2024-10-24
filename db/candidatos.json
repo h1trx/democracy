@@ -8,18 +8,28 @@
     {
       "id": 2,
       "nombre": "jose",
-      "votos": 0
+      "votos": 1
+    },
+    {
+      "id": 3,
+      "nombre": "Amilkar",
+      "votos": 1
     }
   ],
   "contraloria": [
     {
       "id": 1,
       "nombre": "Guillo",
-      "votos": 1
+      "votos": 0
     },
     {
       "id": 2,
       "nombre": "jose",
+      "votos": 0
+    },
+    {
+      "id": 3,
+      "nombre": "Amilkar",
       "votos": 0
     }
   ]
