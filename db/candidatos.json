@@ -2,35 +2,41 @@
   "personeria": [
     {
       "id": 1,
-      "nombre": "Guillo",
-      "votos": 8
+      "nombre": "Guillermo Ivan Salgado Sandoval",
+      "votos": 8,
+      "img": "https://http.cat/images/100.jpg"
     },
     {
       "id": 2,
-      "nombre": "jose",
-      "votos": 3
+      "nombre": "jose Angel Franco Alcala",
+      "votos": 3,
+      "img": "https://http.cat/images/100.jpg"
     },
     {
       "id": 3,
-      "nombre": "Amilkar",
-      "votos": 1
+      "nombre": "Amilkar Antonio Poloh Erazo",
+      "votos": 1,
+      "img": "https://http.cat/images/100.jpg"
     }
   ],
   "contraloria": [
     {
       "id": 1,
-      "nombre": "Guillo",
-      "votos": 2
+      "nombre": "Guillermo Ivan Salgado Sandoval",
+      "votos": 2,
+      "img": "https://http.cat/images/100.jpg"
     },
     {
       "id": 2,
-      "nombre": "jose",
-      "votos": 6
+      "nombre": "jose Angel Franco Alcala",
+      "votos": 6,
+      "img": "https://http.cat/images/100.jpg"
     },
     {
       "id": 3,
-      "nombre": "Amilkar",
-      "votos": 1
+      "nombre": "Amilkar Antonio Poloh Erazo",
+      "votos": 1,
+      "img": "https://http.cat/images/100.jpg"
     }
   ]
 }

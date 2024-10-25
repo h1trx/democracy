@@ -4,15 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Votes page</title>
+    <style>
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        h1 {
+            width: 100%;
+            text-align: center;
+        }
+        h2 {
+            width: 100%;
+            text-align: center;
+        }
+        main {
+            display: flex;
+            justify-content: space-around;
+        }
+        .seccion {
+            max-width: 100%;
+            display: flex;
+            justify-content: right;
+        }
+        .typeOne, .typeTwo{
+            margin-top: 30px;
+            width: 100%;
+            display: flex;
+        }
+        .typeOne {
+            justify-content: right;
+        }
+        .texts {
+            max-width: 40%;
+            text-align: center;
+        }
+        .foto img {
+            width: 200px;
+            margin:  0 10px;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
+    <h1>Conteo de votos</h1>
     <main>
-        <h1>Conteo de votos</h1>
         <div class="seccion">
-            <div>
-            </div>
+            <div id="personeros">
+                <h2>Personeria</h2>
         </div>
-        <div class="seccion"></div>   
+        <div class="seccion">
+            <div id="contralores">
+                <h2>Contraloria</h2>
+            </div>
+        </div>   
     </main>
     <script>
         async function getVotos () {
@@ -26,7 +69,34 @@
                     },
                 })
                 const res = await req.json();
-                console.log(res.personeria[0].votos)
+                let container = document.getElementById('personeros')
+                let html = '';
+                res.personeria.forEach(e => {
+                    html += `<div class="typeOne">
+                                <div class="texts">
+                                    <h2>${e.nombre}</h2>
+                                    <p>Votos: ${e.id}</p>
+                                </div>
+                                <div class="foto">
+                                    <img src="${e.img}" alt="">
+                                </div>
+                            </div>`
+                });
+                container.innerHTML += html
+                container = document.getElementById('contralores')
+                html = ''
+                res.contraloria.forEach(e => {
+                    html += `<div class="typeTwo">
+                                <div class="foto">
+                                    <img src="${e.img}" alt="">
+                                </div>
+                                <div class="texts">
+                                    <h2>${e.nombre}</h2>
+                                    <p>Votos: ${e.votos}</p>
+                                </div>
+                            </div>`
+                })
+                container.innerHTML += html
             } catch (err) {
                 console.log(err)
             }
@@ -43,7 +113,7 @@
                         'auth': auth
                     },
                 })
-
+                if (req.status == 401) {window.location.href = 'http://localhost:3000'}
                 if (req.ok) getVotos(); 
             } catch (err) {
                 window.location.href = 'http://localhost:3000'
