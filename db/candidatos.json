@@ -3,12 +3,12 @@
     {
       "id": 1,
       "nombre": "Guillo",
-      "votos": 1
+      "votos": 8
     },
     {
       "id": 2,
       "nombre": "jose",
-      "votos": 1
+      "votos": 3
     },
     {
       "id": 3,
@@ -20,17 +20,17 @@
     {
       "id": 1,
       "nombre": "Guillo",
-      "votos": 0
+      "votos": 2
     },
     {
       "id": 2,
       "nombre": "jose",
-      "votos": 0
+      "votos": 6
     },
     {
       "id": 3,
       "nombre": "Amilkar",
-      "votos": 0
+      "votos": 1
     }
   ]
 }

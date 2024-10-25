@@ -4,23 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Votes page</title>
-    <link rel="stylesheet" href="/public/src/css/style.css">
 </head>
 <body>
     <main>
-       <section>
-            <h1> CONTEO DE VOTOS PERSONERIA</h1>
+        <h1>Conteo de votos</h1>
+        <div class="seccion">
             <div>
-                <p></p>
             </div>
-       </section>
-
-       <section>
-            <h1>CONTEO DE VOTOS CONTRALORIA </h1>
-            <div>
-                <p></p>
-            </div>
-       </section>
+        </div>
+        <div class="seccion"></div>   
     </main>
+    <script>
+        async function getVotos () {
+            const url = 'http://localhost:3000/api/vote/all'
+
+            try {
+                const req = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'content-Type': 'application/json',
+                    },
+                })
+                const res = await req.json();
+                console.log(res.personeria)
+            } catch (err) {
+                console.log(err)
+            }
+        }
+        async function auth () {
+            const auth = localStorage.getItem('auth');
+            const url = 'http://localhost:3000/api/user/auth'
+
+            try {
+                const req = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'content-Type': 'application/json',
+                        'auth': auth
+                    },
+                })
+
+                if (req.ok) getVotos(); 
+            } catch (err) {
+                window.location.href = 'http://localhost:3000'
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            auth()
+        });
+    </script>
 </body>
 </html>

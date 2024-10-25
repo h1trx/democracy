@@ -125,7 +125,7 @@
             <div class="contenido">
                 <h3>¿Está seguro de su elección?</h3>
                 <div class="botoncitos">
-                    <button onclick="votar()">Si</button>
+                    <button onclick="auth()">Si</button>
                     <button onclick="noVisible()">No</button>
                 </div>
             </div>
@@ -142,6 +142,26 @@
         function noVisible () {
             const eleccion = document.getElementById('eleccion')
             eleccion.classList.add('noVisible')
+        }
+        async function auth () {
+            const auth= localStorage.getItem('auth');
+            const url = 'http://localhost:3000/api/user/auth'
+
+            try {
+                const req = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'content-Type': 'application/json',
+                        'auth': auth
+                    },
+                })
+
+                if (req.ok) {
+                    votar()
+                }
+            } catch (err) {
+                console.error(err)
+            }
         }
         async function votar () {
             const auth= localStorage.getItem('auth');

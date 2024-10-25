@@ -1,5 +1,5 @@
 body {
-    background-color:#e6f7df ;
+    /*background-color:#e6f7df ;*/
     font-family: monospace;
 }
 
@@ -22,32 +22,55 @@ main {
 }
 
 .inputs{
-    height: 25px;
-    width: 300px;
-    border-radius: 15px;
+    height: 35px;
+    width: 45%;
+    border-radius: 20px;
+    font-size: 15px;
+    border: 2px solid black;
+    color: black;
 }
 
 .div_2{
     position: relative;
-    top: 400px;
+    width: 100%;
 }
 
+.firt {
+    font-size: 80px;
+    text-align: center;
+}
 
 .one {
+    margin: 0 auto;
+    width: 80%;
+    position: relative;
     display: flex;
-    flex-direction: row;
-    gap: 20px;
+    justify-content: space-around;
 }
 
-.one input {
-    max-width: 90%;
+.subDiv {
+    width: 90%;
+    margin: 0 auto;
 }
 
 .two {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
 }
 
-.two button {
-    margin-left: 300px;
+/* .two button {
+    margin-left: 200px;
     margin-top: 50px;
+} */
+
+#botoncito {
+    width: 200px;
+    height: 35px;
+    border: none;
+    color: white;
+    background-color: black;
+    border-radius: 15px;
+    font-size: 18px;
 }

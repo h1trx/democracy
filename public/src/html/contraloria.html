@@ -100,7 +100,7 @@
 <body>
     <main>
         <div class="mainTittle">
-            <h1>Elija un candidato para Personeria</h1>
+            <h1>Elija un candidato para Contraloria</h1>
         </div>
         <div class="lista">
             <div class="mydiv">
@@ -125,22 +125,67 @@
             <div class="contenido">
                 <h3>¿Está seguro de su elección?</h3>
                 <div class="botoncitos">
-                    <button>Si</button>
+                    <button onclick="auth()">Si</button>
                     <button onclick="noVisible()">No</button>
                 </div>
             </div>
         </div>
      </div>
      <script>
+        let voto;
         function pop_up (id) {
             const eleccion = document.getElementById('eleccion')
             eleccion.classList.remove('noVisible')
             eleccion.classList.add('visible')
+            voto = id
         }
         function noVisible () {
             const eleccion = document.getElementById('eleccion')
             eleccion.classList.add('noVisible')
         }
+        async function auth () {
+            const auth= localStorage.getItem('auth');
+            const url = 'http://localhost:3000/api/user/auth'
+
+            try {
+                const req = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'content-Type': 'application/json',
+                        'auth': auth
+                    },
+                })
+
+                if (req.ok) {
+                    votar()
+                }
+            } catch (err) {
+                console.error(err)
+            }
+        }
+        async function votar () {
+            const auth= localStorage.getItem('auth');
+            const url = 'http://localhost:3000/api/vote/contralor'
+            const data = {'voto': voto}
+
+            try {
+                const req = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'content-Type': 'application/json',
+                        'auth': auth
+                    },
+                    body: JSON.stringify(data)
+                })
+                console.log(req.ok)
+
+                if (req.ok) {
+                    window.location.href = 'http://localhost:3000/gracias'
+                }
+            } catch (err) {
+                console.error(err)
+            }
+                }
      </script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 {
     "usuarios": [
-        { "id": 1062430256, "pin": 10297, "name": "Guillo" },
-        { "id": 1983888447, "pin": 10297,  "name": "jose" }
+        { "id": 1062430256, "pin": 10297, "name": "Guillo", "voto": false },
+        { "id": 1062962703, "pin": 83923, "name": "Jose", "voto": false },
+        { "id": 1072782822, "pin": 78997, "name": "Maria", "voto": false }
     ]
 }

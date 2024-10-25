@@ -5,14 +5,12 @@ import { verifyToken } from "../middleware/auth.handler.js";
 
 const router = Router()
 
-router.post('/all',
-    verifyToken(),
-    (req, res) => {
-        const votar = new Vote()
-        votar.all().then(resolve => {
-            res.json(resolve)
-        })
+router.post('/all',(req, res) => {
+    const votar = new Vote()
+    votar.all().then(resolve => {
+        res.json(resolve)
     })
+})
 
 router.post('/personero',(req, res) => {
     const { voto } = req.body   
@@ -22,14 +20,12 @@ router.post('/personero',(req, res) => {
     })
 })
 
-    router.post('/contralor',
-        verifyToken(),
-        (req, res) => {
-            const { voto } = req.body
-            const votar = new Vote()
-            votar.contralor(voto).then(resolve => {
-                res.json(resolve)
-            })
-        })
+router.post('/contralor',(req, res) => {
+    const { voto } = req.body
+    const votar = new Vote()
+    votar.contralor(voto).then(resolve => {
+        res.json(resolve)
+    })
+})
 
 export default router

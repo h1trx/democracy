@@ -3,20 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Thanks!!</title>
+    <style>
+        section {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            width: 100%;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+        section h1 {
+            text-align: center;
+            font-size: 100px;
+        }
+    </style>
 </head>
 <body>
     <main>
         <section>
             <h1>¡GRACIAS POR SU PARTICIPACION!</h1>
         </section>
-
-        <section>
-            <div>
-                <p> <img src="https://res.cloudinary.com/dvdhtdzwp/image/upload/v1729639110/ier.png" alt=""> </p>
-            </div>
-        </section>
-
     </main>
+    <script>
+        localStorage.removeItem('auth');
+        setTimeout(() => {
+            window.location.href = 'http://localhost:3000/'
+        }, 7000)
+    </script>
 </body>
 </html>
