@@ -56,7 +56,7 @@ Este proyecto tiene como fin, desarrollar una plataforma de votaciones para la I
     │   │   │   │   ├── personeria.md   # Documentación sobre la vista personeria.html
     │   │   │   │   └── votos.md        # Documentación sobre la vista votos.html
     │   │   │   └── /js                 # Documentación sobre el código JavaScript
-     │   │   │       └── auth.md         # Documentación sobre el archivo auth.js
+    │   │   │       └── auth.md         # Documentación sobre el archivo auth.js
     │   │   └── index.md                # Documentación sobre la estructura de la página principal
     │   ├── /routes                     # Documentación sobre las rutas de la aplicación
     │   │   ├── routes.md               # Documentación sobre la configuración de rutas
