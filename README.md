@@ -42,7 +42,7 @@ Este proyecto tiene como fin, desarrollar una plataforma de votaciones para la I
     │
     ├── /docs                           # Documentación del proyecto
     │   ├── /db                         # Documentación sobre las bases de datos
-    │   │   │   ├── candidatos.md       # Documentación sobre la estructura y uso de candidatos.json
+    │   │   ├── candidatos.md           # Documentación sobre la estructura y uso de candidatos.json
     │   │   └── users.md                # Documentación sobre la estructura y uso de users.json
     │   ├── /middleware                 # Documentación de los middleware utilizados en el proyecto
     │   │   └── auth.handler.md         # Documentación del middleware de autenticación
